@@ -3,7 +3,7 @@ import { authOptions } from '@/shared/constants/auth-options';
 import { getServerSession } from 'next-auth/next';
 import { NextResponse } from 'next/server';
 
-// export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
 	try {
@@ -22,8 +22,6 @@ export async function GET() {
 				email: true,
 			},
 		});
-
-		console.log(data);
 
 		return NextResponse.json(data);
 	} catch (error) {
