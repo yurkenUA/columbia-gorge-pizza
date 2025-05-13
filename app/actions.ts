@@ -92,7 +92,7 @@ export async function createOrder(data: CheckoutFormValues) {
 			},
 		});
 
-		const paymentUrl = process.env.PAYMENT_URL ?? 'http://localhost:3000/?paid';
+		const paymentUrl = process.env.PAYMENT_URL ?? 'https://columbia-gorge-pizza.vercel.app/?paid';
 
 		await sendEmail(
 			'zatoka.dev@gmail.com',
