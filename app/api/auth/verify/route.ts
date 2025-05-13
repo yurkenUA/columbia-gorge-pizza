@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
 
 		await prisma.user.update({
 			where: {
-				id: verificationCode.userId,
+				id: verificationCode?.userId as number,
 			},
 			data: {
 				verified: new Date(),
@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
 
 		await prisma.verificationCode.delete({
 			where: {
-				id: verificationCode.id,
+				id: verificationCode?.id,
 			},
 		});
 
